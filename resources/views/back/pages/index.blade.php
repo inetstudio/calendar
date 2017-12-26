@@ -6,7 +6,7 @@
 
 @section('title', $title)
 
-@pushonce('styles:fullcalendar')
+@pushonce('pre_styles:fullcalendar')
     <!-- FULLCALENDAR -->
     <link href="{!! asset('admin/css/plugins/fullcalendar/fullcalendar.min.css') !!}" rel="stylesheet">
     <link href="{!! asset('admin/css/plugins/fullcalendar/fullcalendar.print.min.css') !!}" rel="stylesheet" media="print">
