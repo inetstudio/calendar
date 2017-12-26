@@ -1,0 +1,27 @@
+{
+    "name": "inetstudio/calendar",
+    "description": "Package for calendar",
+    "homepage": "https://github.com/inetstudio/calendar",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Konstantin Bukin",
+        "email": "bukin@inetstudio.ru"
+      }
+    ],
+    "require": {
+      "inetstudio/admin-panel": "1.5.*"
+    },
+    "autoload": {
+      "psr-4": {
+        "InetStudio\\Calendar\\": "src/"
+      }
+    },
+    "extra": {
+      "laravel": {
+        "providers": [
+          "InetStudio\\Calendar\\Providers\\CalendarServiceProvider"
+        ]
+      }
+    }
+}
