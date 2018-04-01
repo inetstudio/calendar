@@ -68,16 +68,6 @@ class SetupCommand extends Command
         $this->calls = [
             [
                 'type' => 'artisan',
-                'description' => 'Publish public',
-                'command' => 'vendor:publish',
-                'params' => [
-                    '--provider' => 'InetStudio\Calendar\Providers\CalendarServiceProvider',
-                    '--tag' => 'public',
-                    '--force' => true,
-                ],
-            ],
-            [
-                'type' => 'artisan',
                 'description' => 'Publish config',
                 'command' => 'vendor:publish',
                 'params' => [

@@ -1,0 +1,9 @@
+{
+  "name": "inetstudio-calendar",
+  "version": "1.6.0",
+  "dependencies": {
+    "fullcalendar": "^3.9.0",
+    "moment": "^2.21.0",
+    "tippy.js": "^2.3.0"
+  }
+}

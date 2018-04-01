@@ -52,10 +52,6 @@ class CalendarServiceProvider extends ServiceProvider
     protected function registerPublishes(): void
     {
         $this->publishes([
-            __DIR__.'/../../public' => public_path(),
-        ], 'public');
-
-        $this->publishes([
             __DIR__.'/../../config/calendar.php' => config_path('calendar.php'),
         ], 'config');
     }
