@@ -92,7 +92,7 @@ class CalendarController extends Controller
             $newTime = Carbon::parse($time);
 
             $item->update([
-                $types[$type]['fields']['time'] => $newTime,
+                $types[$type]['fields']['time'] => $newTime->format('d.m.Y H:i'),
             ]);
 
             $result = [
