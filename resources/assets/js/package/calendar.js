@@ -2,10 +2,11 @@ let calendar = {};
 
 calendar.init = function () {
     $('.calendar-package .calendar').each(function () {
-        let eventsURL = $(this).attr('data-events'),
-            changeURL = $(this).attr('data-change');
+        let $calendar = $(this);
+        let eventsURL = $calendar.attr('data-events');
+        let changeURL = $calendar.attr('data-change');
 
-        $(this).fullCalendar({
+        let calendarOptions = {
             header: {
                 left: 'prev,next today',
                 center: 'title',
@@ -15,8 +16,29 @@ calendar.init = function () {
             weekNumbers: true,
             weekNumbersWithinDays: true,
             eventLimit: true,
-            editable: true,
-            eventDrop: function(event, delta, revertFunc) {
+            timeFormat: 'H:mm',
+            events: {
+                url: eventsURL
+            },
+            eventRender: function(event, element) {
+                tippy(element.get(), {
+                    onShow: function () {
+                        const content = this.querySelector('.tippy-content');
+
+                        content.innerHTML = event.tooltip;
+                    },
+                    html: '#eventTooltip',
+                    trigger: 'click',
+                    interactive: true,
+                    arrow: true,
+                    theme: 'light'
+                });
+            }
+        };
+
+        if (changeURL) {
+            calendarOptions.editable = true;
+            calendarOptions.eventDrop = function(event, delta, revertFunc) {
                 swal({
                     title: "Вы уверены?",
                     type: "info",
@@ -55,26 +77,10 @@ calendar.init = function () {
                         revertFunc();
                     }
                 });
-            },
-            timeFormat: 'H:mm',
-            events: {
-                url: eventsURL
-            },
-            eventRender: function(event, element) {
-                tippy(element.get(), {
-                    onShow: function () {
-                        const content = this.querySelector('.tippy-content');
+            };
+        }
 
-                        content.innerHTML = event.tooltip;
-                    },
-                    html: '#eventTooltip',
-                    trigger: 'click',
-                    interactive: true,
-                    arrow: true,
-                    theme: 'light'
-                });
-            }
-        });
+        $(this).fullCalendar(calendarOptions);
     });
 };
 

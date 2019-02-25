@@ -1,10 +1,10 @@
 <?php
 
-namespace InetStudio\Calendar\Http\Controllers\Back;
+namespace InetStudio\Calendar\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
-use InetStudio\Calendar\Contracts\Http\Controllers\Back\CalendarControllerContract;
-use InetStudio\Calendar\Contracts\Http\Responses\Back\Resource\IndexResponseContract;
+use InetStudio\Calendar\Contracts\Http\Controllers\Front\CalendarControllerContract;
+use InetStudio\Calendar\Contracts\Http\Responses\Front\Resource\IndexResponseContract;
 
 /**
  * Class CalendarController.

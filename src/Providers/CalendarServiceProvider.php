@@ -3,8 +3,10 @@
 namespace InetStudio\Calendar\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use InetStudio\Calendar\Console\Commands\SetupCommand;
 
+/**
+ * Class CalendarServiceProvider.
+ */
 class CalendarServiceProvider extends ServiceProvider
 {
     /**
@@ -21,16 +23,6 @@ class CalendarServiceProvider extends ServiceProvider
     }
 
     /**
-     * Регистрация привязки в контейнере.
-     *
-     * @return void
-     */
-    public function register(): void
-    {
-        //$this->registerBindings();
-    }
-
-    /**
      * Регистрация команд.
      *
      * @return void
@@ -39,7 +31,7 @@ class CalendarServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                SetupCommand::class,
+                'InetStudio\Calendar\Console\Commands\SetupCommand',
             ]);
         }
     }

@@ -3,18 +3,18 @@
 return [
 
     'articles' => [
-        'model' => '\InetStudio\Articles\Models\ArticleModel',
-        'fields' => [
+        'model' => 'InetStudio\Articles\Contracts\Models\ArticleModelContract',
+        'field' => [
             'title' => 'title',
-            'time' => 'publish_date',
+            'name' => 'publish_date',
         ],
     ],
 
     'ingredients' => [
-        'model' => '\InetStudio\Ingredients\Models\IngredientModel',
-        'fields' => [
+        'model' => 'InetStudio\Ingredients\Contracts\Models\IngredientModelContract',
+        'field' => [
             'title' => 'title',
-            'time' => 'created_at',
+            'name' => 'created_at',
         ],
     ],
 

@@ -17,6 +17,7 @@
     "extra": {
       "laravel": {
         "providers": [
+          "InetStudio\\Calendar\\Providers\\CalendarBindingsServiceProvider",
           "InetStudio\\Calendar\\Providers\\CalendarServiceProvider"
         ]
       }

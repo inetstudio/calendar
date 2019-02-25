@@ -1,13 +1,26 @@
 <?php
 
-Route::group(['namespace' => 'InetStudio\Calendar\Http\Controllers\Back'], function () {
-    Route::group(['middleware' => 'web', 'prefix' => 'back'], function () {
-        Route::group(['middleware' => 'back.auth'], function () {
-            Route::get('calendar/events', 'CalendarController@getEvents')->name('back.calendar.events');
-            Route::post('calendar/change', 'CalendarController@changeEvent')->name('back.calendar.change');
-            Route::resource('calendar', 'CalendarController', ['only' => [
-                'index',
-            ], 'as' => 'back']);
-        });
-    });
+Route::group([
+    'namespace' => 'InetStudio\Calendar\Contracts\Http\Controllers\Back',
+    'middleware' => ['web', 'back.auth'],
+    'prefix' => 'back',
+], function () {
+    Route::get('calendar/events', 'EventsControllerContract@getEvents')->name('back.calendar.events');
+    Route::post('calendar/change', 'EventsControllerContract@changeEvent')->name('back.calendar.change');
+
+    Route::resource('calendar', 'CalendarControllerContract', ['only' => [
+        'index',
+    ], 'as' => 'back']);
+});
+
+Route::group([
+    'namespace' => 'InetStudio\Calendar\Contracts\Http\Controllers\Front',
+    'middleware' => ['web', 'role:admin|smm'],
+    'prefix' => 'module',
+], function () {
+    Route::get('calendar/events', 'EventsControllerContract@getEvents')->name('front.calendar.events');
+
+    Route::resource('calendar', 'CalendarControllerContract', ['only' => [
+        'index',
+    ], 'as' => 'front']);
 });
