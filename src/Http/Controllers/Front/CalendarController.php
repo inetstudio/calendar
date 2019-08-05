@@ -2,7 +2,7 @@
 
 namespace InetStudio\Calendar\Http\Controllers\Front;
 
-use App\Http\Controllers\Controller;
+use InetStudio\AdminPanel\Base\Http\Controllers\Controller;
 use InetStudio\Calendar\Contracts\Http\Controllers\Front\CalendarControllerContract;
 use InetStudio\Calendar\Contracts\Http\Responses\Front\Resource\IndexResponseContract;
 

@@ -3,7 +3,7 @@
 namespace InetStudio\Calendar\Http\Controllers\Front;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use InetStudio\AdminPanel\Base\Http\Controllers\Controller;
 use InetStudio\Calendar\Contracts\Http\Controllers\Front\EventsControllerContract;
 use InetStudio\Calendar\Contracts\Http\Responses\Front\Events\GetEventsResponseContract;
 
