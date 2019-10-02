@@ -1,6 +1,6 @@
 {
   "name": "inetstudio-calendar",
-  "version": "1.8.0",
+  "version": "6.0.0",
   "dependencies": {
     "fullcalendar": "^3.9.0",
     "moment": "^2.21.0",
