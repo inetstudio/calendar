@@ -14,14 +14,19 @@
   },
   "autoload": {
     "psr-4": {
-      "InetStudio\\Calendar\\": "src/"
+      "InetStudio\\CalendarPackage\\": "package/src/",
+      "InetStudio\\CalendarPackage\\Calendar\\": "entities/calendar/src/",
+      "InetStudio\\CalendarPackage\\Events\\": "entities/events/src/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "InetStudio\\Calendar\\Providers\\CalendarBindingsServiceProvider",
-        "InetStudio\\Calendar\\Providers\\CalendarServiceProvider"
+        "InetStudio\\CalendarPackage\\Providers\\ServiceProvider",
+        "InetStudio\\CalendarPackage\\Calendar\\Providers\\BindingsServiceProvider",
+        "InetStudio\\CalendarPackage\\Calendar\\Providers\\ServiceProvider",
+        "InetStudio\\CalendarPackage\\Events\\Providers\\BindingsServiceProvider",
+        "InetStudio\\CalendarPackage\\Events\\Providers\\ServiceProvider"
       ]
     }
   }
