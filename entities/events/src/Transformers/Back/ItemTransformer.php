@@ -50,7 +50,7 @@ class ItemTransformer extends BaseTransformer implements ItemTransformerContract
             'start' => (string) $item[$this->config[$configKey]['field']['name']],
             'className' => 'btn-'.($status['color_class'] ?? 'default'),
             'tooltip' => view(
-                $this->config[$configKey]['views_namespace'].'::front.partials.calendar_package.events.tooltip',
+                $this->config[$configKey]['views_namespace'].'::back.partials.calendar_package.events.tooltip',
                 compact('item')
             )->render(),
         ];
