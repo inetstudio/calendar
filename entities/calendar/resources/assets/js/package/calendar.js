@@ -1,3 +1,5 @@
+import tippy from 'tippy.js';
+
 let calendar = {};
 
 calendar.init = function () {
@@ -22,16 +24,13 @@ calendar.init = function () {
             },
             eventRender: function(event, element) {
                 tippy(element.get(), {
-                    onShow: function () {
-                        const content = this.querySelector('.tippy-content');
-
-                        content.innerHTML = event.tooltip;
-                    },
-                    html: '#eventTooltip',
+                    allowHTML: true,
+                    content: event.tooltip,
                     trigger: 'click',
                     interactive: true,
                     arrow: true,
-                    theme: 'light'
+                    theme: 'light',
+                    appendTo: window.document.getElementById('eventTooltip')
                 });
             }
         };
@@ -84,4 +83,4 @@ calendar.init = function () {
     });
 };
 
-module.exports = calendar;
+export default calendar
