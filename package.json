@@ -4,6 +4,6 @@
   "dependencies": {
     "fullcalendar": "^3.9.0",
     "moment": "^2.21.0",
-    "tippy.js": "^2.3.0"
+    "tippy.js": "^6.2.3"
   }
 }
