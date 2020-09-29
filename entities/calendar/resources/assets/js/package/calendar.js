@@ -23,9 +23,14 @@ calendar.init = function () {
                 url: eventsURL
             },
             eventRender: function(event, element) {
+                let eventId = UUID.generate();
+
+                element.attr('data-uuid', eventId);
+                let content = $(event.tooltip).first().attr('data-uuid', eventId)
+
                 tippy(element.get(), {
                     allowHTML: true,
-                    content: event.tooltip,
+                    content: content[0].outerHTML,
                     trigger: 'click',
                     interactive: true,
                     arrow: true,
