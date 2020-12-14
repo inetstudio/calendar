@@ -18,11 +18,10 @@
                 <div class="ibox float-e-margins calendar-package">
                     <div class="ibox-content">
                         <div class="calendar" data-events="{{ route('back.calendar-package.events') }}" data-change="{{ route('back.calendar-package.events.update') }}"></div>
+                        <div id="eventTooltip"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <div id="eventTooltip" style="display: none"></div>
 @endsection
