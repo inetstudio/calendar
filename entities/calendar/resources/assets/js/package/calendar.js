@@ -1,4 +1,6 @@
+import Swal from 'sweetalert2';
 import tippy from 'tippy.js';
+import { v4 as uuidv4 } from 'uuid';
 
 let calendar = {};
 
@@ -23,7 +25,7 @@ calendar.init = function () {
                 url: eventsURL
             },
             eventRender: function(event, element) {
-                let eventId = UUID.generate();
+                let eventId = uuidv4();
 
                 element.attr('data-uuid', eventId);
                 let content = $(event.tooltip).first().attr('data-uuid', eventId)
@@ -43,9 +45,9 @@ calendar.init = function () {
         if (changeURL) {
             calendarOptions.editable = true;
             calendarOptions.eventDrop = function(event, delta, revertFunc) {
-                swal({
+                Swal.fire({
                     title: "Вы уверены?",
-                    type: "info",
+                    icon: "info",
                     showCancelButton: true,
                     cancelButtonText: "Отмена",
                     confirmButtonColor: "#1ab394",
@@ -64,15 +66,15 @@ calendar.init = function () {
                             },
                             success: function (data) {
                                 if (data.success === true) {
-                                    swal({
+                                    Swal.fire({
                                         title: data.message,
-                                        type: "success"
+                                        icon: "success"
                                     });
                                 } else {
-                                    swal({
+                                    Swal.fire({
                                         title: "Ошибка",
                                         text: data.message,
-                                        type: "error"
+                                        icon: "error"
                                     });
                                 }
                             }
